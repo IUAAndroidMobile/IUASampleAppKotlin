@@ -23,7 +23,7 @@
     <string name="orangeHex" type="color">#FF9800</string>
     <string name="blueHex" type="color">#2196F3</string>
     <string name="yellowHex" type="color">#FFEB3B</string>>
-    <string name="bluegreyHex" type="color">#607D8B</string>
+    <string name="greyHex" type="color">#607D8B</string>
 
     <string name="tealHex" type="color">#009688</string>
     <string name="deeppurpleHex" type="color">#673AB7</string>
