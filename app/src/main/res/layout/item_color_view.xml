@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+    <View
+        android:id="@+id/circleView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/circle"/>
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Verde Agua"
+        android:layout_marginStart="50dp"
+        android:layout_toEndOf="@+id/circleView"
+        android:layout_toRightOf="@+id/circleView"
+        />
+
+    <TextView
+        android:id="@+id/subtitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#03DAC5"
+        android:layout_alignStart="@+id/titleTextView"
+        android:layout_below="@+id/titleTextView"/>
+</RelativeLayout>
