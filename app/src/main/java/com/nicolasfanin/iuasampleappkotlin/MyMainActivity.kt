@@ -42,6 +42,6 @@ class MyMainActivity : AppCompatActivity(), ListAdapter.RecyclerViewOnClickListe
     }
 
     override fun onItemClickListener(position: Int) {
-        Toast.makeText(this, "Su Color es ${colors[position].name}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Su color es ${colors[position].name}", Toast.LENGTH_SHORT).show()
     }
 }

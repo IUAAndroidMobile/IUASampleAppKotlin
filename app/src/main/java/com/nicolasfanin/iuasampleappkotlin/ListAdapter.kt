@@ -24,7 +24,6 @@ class ListAdapter(val data: List<Color>, val listener: RecyclerViewOnClickListen
         holder.titleTextView.text = color.name
         holder.subtitleTextView.text = color.hex
 
-
         //holder.circleView.setBackgroundColor(android.graphics.Color.parseColor(color.hex))
 
         val gradientDrawable: GradientDrawable = holder.circleView.background as GradientDrawable
@@ -33,10 +32,7 @@ class ListAdapter(val data: List<Color>, val listener: RecyclerViewOnClickListen
 
     override fun getItemCount(): Int = data.size
 
-    class PalleteViewHolder(itemView: View, listener: RecyclerViewOnClickListener) :
-        RecyclerView.ViewHolder(
-            itemView
-        ) {
+    class PalleteViewHolder(itemView: View, listener: RecyclerViewOnClickListener) : RecyclerView.ViewHolder(itemView) {
         val circleView = itemView.findViewById<View>(R.id.circleView)
         val titleTextView = itemView.findViewById<TextView>(R.id.titleTextView)
         val subtitleTextView = itemView.findViewById<TextView>(R.id.subtitleTextView)
