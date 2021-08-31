@@ -17,9 +17,9 @@
     <string name="brown">Brown</string>
 
 
-    <string name="redHex" >#F44336</string>
+    <string name="redHex">#F44336</string>
     <string name="indigoHex">#3F51B5</string>
-    <string name="greenHex" >#4CAF50</string>
+    <string name="greenHex">#4CAF50</string>
     <string name="orangeHex" type="color">#FF9800</string>
     <string name="blueHex" type="color">#2196F3</string>
     <string name="yellowHex" type="color">#FFEB3B</string>>
@@ -28,6 +28,8 @@
     <string name="tealHex" type="color">#009688</string>
     <string name="deeppurpleHex" type="color">#673AB7</string>
     <string name="cyanHex" type="color">#00BCD4</string>
-    <string name="brownHex" type="color">#795548</string> -->
+    <string name="brownHex" type="color">#795548</string>
+    <string name="button_go_to_movie_list">GO TO MOVIELIST</string>
+    -->
 
 </resources>

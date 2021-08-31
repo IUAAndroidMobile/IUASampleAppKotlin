@@ -1,13 +1,20 @@
-package com.nicolasfanin.iuasampleappkotlin
+package com.nicolasfanin.iuasampleappkotlin.activity
 
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.nicolasfanin.iuasampleappkotlin.Color
+import com.nicolasfanin.iuasampleappkotlin.ListAdapter
+import com.nicolasfanin.iuasampleappkotlin.R
+import com.nicolasfanin.iuasampleappkotlin.viewmodel.MyViewModel
 
 
-class MyMainActivity : AppCompatActivity(), ListAdapter.RecyclerViewOnClickListener {
+class MyMainActivity : AppCompatActivity(),
+    ListAdapter.RecyclerViewOnClickListener {
 
     val colors = mutableListOf<Color>()
 
@@ -15,9 +22,15 @@ class MyMainActivity : AppCompatActivity(), ListAdapter.RecyclerViewOnClickListe
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val viewModel : MyViewModel by viewModels()
+        viewModel.getColors().observe(this, Observer<List<Color>>{list ->
+
+        })
+
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = ListAdapter(initColors(), this)
+        recyclerView.adapter =
+            ListAdapter(initColors(), this)
     }
 
     private fun initColors(): List<Color> {
