@@ -29,7 +29,9 @@
     <string name="deeppurpleHex" type="color">#673AB7</string>
     <string name="cyanHex" type="color">#00BCD4</string>
     <string name="brownHex" type="color">#795548</string>
-    <string name="button_go_to_movie_list">GO TO MOVIELIST</string>
+
+    <string name="button_go_to_movie_list">INTENTS!</string>
+    <string name="button_go_to_recylcer_view">RECYCLER VIEWS!</string>
     -->
 
 </resources>

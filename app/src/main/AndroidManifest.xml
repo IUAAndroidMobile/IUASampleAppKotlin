@@ -25,7 +25,7 @@
 
         <activity android:name=".activity.MyIntentActivity" />
 
-        <activity android:name=".activity.MovieListActivity" />
+        <activity android:name=".activity.ColorListActivity" />
 
     </application>
 

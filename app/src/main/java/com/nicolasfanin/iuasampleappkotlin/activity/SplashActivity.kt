@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.nicolasfanin.iuasampleappkotlin.databinding.ActivitySplashBinding
 import com.nicolasfanin.iuasampleappkotlin.utils.MY_INTENT_ACTIVITY_VALUE
-import com.nicolasfanin.iuasampleappkotlin.utils.MY_INTENT_ACTIVITY_VALUE_2
 
 class SplashActivity: AppCompatActivity() {
 
@@ -28,6 +27,10 @@ class SplashActivity: AppCompatActivity() {
             val myIntent = Intent(this, MyIntentActivity::class.java)
             myIntent.putExtra(MY_INTENT_ACTIVITY_VALUE, "Nico")
             startActivityForResult(myIntent, REQUEST_CODE)
+        }
+
+        binding.navigateToRecyclerView.setOnClickListener {
+            startActivity(Intent(this, ColorListActivity::class.java))
         }
     }
 
@@ -51,7 +54,7 @@ class SplashActivity: AppCompatActivity() {
     }*/
 
     private fun navigateToMovieList() {
-        startActivity(Intent(this, MovieListActivity::class.java))
+        startActivity(Intent(this, ColorListActivity::class.java))
     }
 
     fun checkInternet() : Boolean {
