@@ -5,13 +5,15 @@ import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.nicolasfanin.iuasampleappkotlin.R
 import com.nicolasfanin.iuasampleappkotlin.databinding.ActivitySplashBinding
+import com.nicolasfanin.iuasampleappkotlin.utils.MY_INTENT_ACTIVITY_VALUE
+import com.nicolasfanin.iuasampleappkotlin.utils.MY_INTENT_ACTIVITY_VALUE_2
 
 class SplashActivity: AppCompatActivity() {
+
+    private val REQUEST_CODE = 100
 
     private lateinit var binding: ActivitySplashBinding
 
@@ -23,6 +25,19 @@ class SplashActivity: AppCompatActivity() {
 
         binding.navigateToList.setOnClickListener {
             //Tu acción aca!
+            val myIntent = Intent(this, MyIntentActivity::class.java)
+            myIntent.putExtra(MY_INTENT_ACTIVITY_VALUE, "Nico")
+            startActivityForResult(myIntent, REQUEST_CODE)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                data?.getStringExtra("RESULTADO")
+                Toast.makeText(baseContext, data?.dataString, Toast.LENGTH_LONG).show()
+            }
         }
     }
 
