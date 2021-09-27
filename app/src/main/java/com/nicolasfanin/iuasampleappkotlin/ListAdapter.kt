@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.nicolasfanin.iuasampleappkotlin.recyclerView.Color
 
 class ListAdapter(val data: List<Color>, val listener: RecyclerViewOnClickListener) :
     RecyclerView.Adapter<ListAdapter.PalleteViewHolder>() {

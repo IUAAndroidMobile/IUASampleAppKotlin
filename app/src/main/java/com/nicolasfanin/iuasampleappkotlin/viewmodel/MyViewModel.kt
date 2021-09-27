@@ -3,7 +3,7 @@ package com.nicolasfanin.iuasampleappkotlin.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.nicolasfanin.iuasampleappkotlin.Color
+import com.nicolasfanin.iuasampleappkotlin.recyclerView.Color
 
 class MyViewModel : ViewModel() {
     private var colorsList = MutableLiveData<List<Color>>()

@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.nicolasfanin.iuasampleappkotlin.Color
+import com.nicolasfanin.iuasampleappkotlin.recyclerView.Color
 import com.nicolasfanin.iuasampleappkotlin.ListAdapter
 import com.nicolasfanin.iuasampleappkotlin.R
 import com.nicolasfanin.iuasampleappkotlin.viewmodel.MyViewModel
@@ -23,7 +23,7 @@ class MyMainActivity : AppCompatActivity(),
         setContentView(R.layout.activity_main)
 
         val viewModel : MyViewModel by viewModels()
-        viewModel.getColors().observe(this, Observer<List<Color>>{list ->
+        viewModel.getColors().observe(this, Observer<List<Color>>{ list ->
 
         })
 

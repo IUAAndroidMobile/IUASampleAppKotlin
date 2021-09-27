@@ -7,4 +7,11 @@
     android:background="#ABABAB"
     tools:context=".activity.ColorListActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_color_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        tools:listitem="@layout/item_view_color"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

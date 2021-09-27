@@ -1,4 +1,4 @@
-package com.nicolasfanin.iuasampleappkotlin
+package com.nicolasfanin.iuasampleappkotlin.recyclerView
 
 data class Color(
     val name: String,
