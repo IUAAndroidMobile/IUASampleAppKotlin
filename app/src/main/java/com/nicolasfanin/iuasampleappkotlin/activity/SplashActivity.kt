@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.nicolasfanin.iuasampleappkotlin.databinding.ActivitySplashBinding
+import com.nicolasfanin.iuasampleappkotlin.fragments.MyFragmentsActivity
 import com.nicolasfanin.iuasampleappkotlin.utils.MY_INTENT_ACTIVITY_VALUE
 
 class SplashActivity: AppCompatActivity() {
@@ -31,6 +32,10 @@ class SplashActivity: AppCompatActivity() {
 
         binding.navigateToRecyclerView.setOnClickListener {
             startActivity(Intent(this, ColorListActivity::class.java))
+        }
+
+        binding.navigateToFragments.setOnClickListener {
+            startActivity(Intent(this, MyFragmentsActivity::class.java))
         }
     }
 
