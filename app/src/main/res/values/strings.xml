@@ -32,6 +32,6 @@
 
     <string name="button_go_to_movie_list">INTENTS!</string>
     <string name="button_go_to_recylcer_view">RECYCLER VIEWS!</string>
-    -->
+    <string name="button_go_to_fragments">FRAGMENTS</string>
 
 </resources>

@@ -32,4 +32,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/navigate_to_list" />
 
+    <Button
+        android:id="@+id/navigate_to_fragments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="@dimen/button_margin"
+        android:text="@string/button_go_to_fragments"
+        android:textSize="@dimen/title_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/navigate_to_recyclerView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
