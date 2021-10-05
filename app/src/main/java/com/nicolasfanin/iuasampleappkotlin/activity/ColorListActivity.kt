@@ -27,17 +27,20 @@ class ColorListActivity : AppCompatActivity(), RecyclerViewOnClickListener {
 
 
     private fun initColors()  {
-        colorsList.add(Color(getString(R.string.red), getString(R.string.redHex)))
-        colorsList.add(Color(getString(R.string.indigo), getString(R.string.indigoHex)))
-        colorsList.add(Color(getString(R.string.green), getString(R.string.greenHex)))
-        colorsList.add(Color(getString(R.string.orange), getString(R.string.orangeHex)))
-        colorsList.add(Color(getString(R.string.blue), getString(R.string.blueHex)))
-        colorsList.add(Color(getString(R.string.yellow), getString(R.string.yellowHex)))
-        colorsList.add(Color(getString(R.string.grey), getString(R.string.greyHex)))
-        colorsList.add(Color(getString(R.string.teal), getString(R.string.tealHex)))
-        colorsList.add(Color(getString(R.string.deeppurple), getString(R.string.deeppurpleHex)))
-        colorsList.add(Color(getString(R.string.cyan), getString(R.string.cyanHex)))
-        colorsList.add(Color(getString(R.string.brown), getString(R.string.brownHex)))
+        colorsList.add(Color("COLORES PRIMARIOS", getString(R.string.yellowHex), 2))
+        colorsList.add(Color(getString(R.string.yellow), getString(R.string.yellowHex), 1))
+        colorsList.add(Color(getString(R.string.blue), getString(R.string.blueHex), 1))
+        colorsList.add(Color(getString(R.string.red), getString(R.string.redHex), 1))
+        colorsList.add(Color("COLORES SECUNDARIOS", getString(R.string.yellowHex), 2))
+        colorsList.add(Color(getString(R.string.green), getString(R.string.greenHex), 1))
+        colorsList.add(Color(getString(R.string.deeppurple), getString(R.string.deeppurpleHex), 1))
+        colorsList.add(Color(getString(R.string.orange), getString(R.string.orangeHex), 1))
+        colorsList.add(Color("COLORES TERCIARIOS", getString(R.string.yellowHex), 2))
+        colorsList.add(Color(getString(R.string.indigo), getString(R.string.indigoHex), 1))
+        colorsList.add(Color(getString(R.string.grey), getString(R.string.greyHex), 1))
+        colorsList.add(Color(getString(R.string.teal), getString(R.string.tealHex), 1))
+        colorsList.add(Color(getString(R.string.cyan), getString(R.string.cyanHex), 1))
+        colorsList.add(Color(getString(R.string.brown), getString(R.string.brownHex), 1))
     }
 
     override fun onItemClick(position: Int) {

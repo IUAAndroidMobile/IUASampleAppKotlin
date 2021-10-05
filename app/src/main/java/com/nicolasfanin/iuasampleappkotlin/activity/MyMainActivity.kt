@@ -27,13 +27,13 @@ class MyMainActivity : AppCompatActivity(),
 
         })
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+        /*val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter =
-            ListAdapter(initColors(), this)
+            ListAdapter(initColors(), this)*/
     }
 
-    private fun initColors(): List<Color> {
+    /*private fun initColors(): List<Color> {
         colors.add(Color(getString(R.string.blue), getString(R.string.blueHex)))
         colors.add(Color(getString(R.string.indigo), getString(R.string.indigoHex)))
         colors.add(Color(getString(R.string.red), getString(R.string.redHex)))
@@ -52,7 +52,7 @@ class MyMainActivity : AppCompatActivity(),
         colors.add(Color(getString(R.string.brown), getString(R.string.brownHex)))
 
         return colors
-    }
+    }*/
 
     override fun onItemClickListener(position: Int) {
         Toast.makeText(this, "Su Color es ${colors[position].name}", Toast.LENGTH_SHORT).show()
