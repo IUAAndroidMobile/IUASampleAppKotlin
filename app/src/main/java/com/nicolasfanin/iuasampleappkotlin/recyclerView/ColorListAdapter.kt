@@ -8,26 +8,41 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.nicolasfanin.iuasampleappkotlin.R
 
-class ColorListAdapter(private val data: List<Color>, private val listener: RecyclerViewOnClickListener) : RecyclerView.Adapter<ColorListViewHolder>() {
+class ColorListAdapter(private val data: List<Color>, private val listener: RecyclerViewOnClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ColorListViewHolder {
-        val row = LayoutInflater.from(parent.context).inflate(R.layout.item_view_color, parent, false)
-        return ColorListViewHolder(row, listener)
+    val COLOR_ITEM = 1
+    val COLOR_TITLE = 2
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        if (viewType == COLOR_ITEM) {
+            val row =
+                LayoutInflater.from(parent.context).inflate(R.layout.item_view_color, parent, false)
+            return ColorListViewHolder(row, listener)
+        } else {
+            val row = LayoutInflater.from(parent.context).inflate(R.layout.item_view_color_title, parent, false)
+            return TitleViewHolder(row)
+        }
     }
 
-    override fun onBindViewHolder(holder: ColorListViewHolder, position: Int) {
-        val color = data.get(position)
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        if (getItemViewType(position) == COLOR_ITEM) {
+            val color = data.get(position)
 
-        holder.colorName.text = color.name
-        holder.colorHexa.text = color.hex
+            (holder as ColorListViewHolder).colorName.text = color.name
+            (holder as ColorListViewHolder).colorHexa.text = color.hex
 
-        //Cambiamos el color de la View
-        val gradient = holder.circleView.background as GradientDrawable
-        val colorId = android.graphics.Color.parseColor(color.hex)
-        gradient.setColor(colorId)
+            //Cambiamos el color de la View
+            val gradient = holder.circleView.background as GradientDrawable
+            val colorId = android.graphics.Color.parseColor(color.hex)
+            gradient.setColor(colorId)
+        } else {
+            (holder as TitleViewHolder).titleTextView.text = data.get(position).name
+        }
     }
 
     override fun getItemCount(): Int = data.size
+
+    override fun getItemViewType(position: Int): Int = data[position].type
 
 }
 
@@ -41,7 +56,10 @@ class ColorListViewHolder(itemView: View, listener: RecyclerViewOnClickListener)
             listener.onItemClick(adapterPosition)
         }
     }
+}
 
+class TitleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    var titleTextView: TextView = itemView.findViewById(R.id.text_view_color_title)
 }
 
 interface RecyclerViewOnClickListener {

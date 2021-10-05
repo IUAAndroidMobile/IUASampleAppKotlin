@@ -12,7 +12,7 @@ class MyViewModel : ViewModel() {
 
     private fun loadColors() {
         val colors = mutableListOf<Color>()
-        colors.add(Color("Blue", "#2196F3"))
+        colors.add(Color("Blue", "#2196F3", 1))
         //...
         colorsList.value = colors
     }
