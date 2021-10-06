@@ -7,6 +7,7 @@ import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.zxing.integration.android.IntentIntegrator
 import com.nicolasfanin.iuasampleappkotlin.databinding.ActivitySplashBinding
 import com.nicolasfanin.iuasampleappkotlin.fragments.MyFragmentsActivity
 import com.nicolasfanin.iuasampleappkotlin.utils.MY_INTENT_ACTIVITY_VALUE
@@ -37,15 +38,29 @@ class SplashActivity: AppCompatActivity() {
         binding.navigateToFragments.setOnClickListener {
             startActivity(Intent(this, MyFragmentsActivity::class.java))
         }
+
+        binding.navigateToScanQr.setOnClickListener {
+            IntentIntegrator(this).initiateScan()
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
                 data?.getStringExtra("RESULTADO")
                 Toast.makeText(baseContext, data?.dataString, Toast.LENGTH_LONG).show()
             }
+        }
+        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+        if (result != null) {
+            if (result.contents == null) {
+                Toast.makeText(this, "Sin resultado", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "El valor escaneado es: ${result.contents}",Toast.LENGTH_LONG).show()
+
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data)
         }
     }
 
