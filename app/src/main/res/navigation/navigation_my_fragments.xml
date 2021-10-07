@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_my_fragments"
+    app:startDestination="@id/myFirstFragment">
+
+    <fragment
+        android:id="@+id/myFirstFragment"
+        android:name="com.nicolasfanin.iuasampleappkotlin.fragments.MyFirstFragment"
+        android:label="MyFirstFragment"
+        tools:layout="@layout/fragment_my_first" >
+        <action
+            android:id="@+id/action_myFirstFragment_to_mySecondFragment"
+            app:destination="@id/mySecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mySecondFragment"
+        android:name="com.nicolasfanin.iuasampleappkotlin.fragments.MySecondFragment"
+        android:label="MySecondFragment"
+        tools:layout="@layout/fragment_my_second" >
+        <action
+            android:id="@+id/action_mySecondFragment_to_myThirdFragment"
+            app:destination="@id/myThirdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myThirdFragment"
+        android:name="com.nicolasfanin.iuasampleappkotlin.fragments.MyThirdFragment"
+        android:label="MyThirdFragment"
+        tools:layout="@layout/fragment_my_third" >
+    </fragment>
+</navigation>
