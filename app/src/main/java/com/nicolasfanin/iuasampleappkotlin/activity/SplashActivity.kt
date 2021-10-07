@@ -63,39 +63,4 @@ class SplashActivity: AppCompatActivity() {
             super.onActivityResult(requestCode, resultCode, data)
         }
     }
-
-    /*override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
-
-        findViewById<Button>(R.id.naigateToMovieListButton).setOnClickListener{
-            navigateToMovieList()
-        }
-    }*/
-
-    private fun navigateToMovieList() {
-        startActivity(Intent(this, ColorListActivity::class.java))
-    }
-
-    fun checkInternet() : Boolean {
-        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val capabilities = connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
-        if (capabilities != null) {
-            return when {
-                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> {
-                    true
-                }
-                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> {
-                    true
-                }
-                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> {
-                    true
-                }
-                else -> false
-            }
-        }
-        return false
-    }
-
-
 }
