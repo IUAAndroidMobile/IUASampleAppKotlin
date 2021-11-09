@@ -42,6 +42,10 @@ class SplashActivity: AppCompatActivity() {
         binding.navigateToScanQr.setOnClickListener {
             IntentIntegrator(this).initiateScan()
         }
+
+        binding.navigateToCalbacks.setOnClickListener {
+            startActivity(Intent(this, CallbacksActivity::class.java))
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
