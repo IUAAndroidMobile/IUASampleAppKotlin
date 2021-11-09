@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/circle.xml" value="0.3734375" />
+        <entry key="app/src/main/res/layout/activity_callbacks.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_color_list.xml" value="0.3423913043478261" />
         <entry key="app/src/main/res/layout/activity_movie_list.xml" value="0.509375" />
         <entry key="app/src/main/res/layout/activity_my_fragments.xml" value="0.22" />
