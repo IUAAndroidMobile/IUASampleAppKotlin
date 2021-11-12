@@ -1,8 +1,10 @@
 package com.nicolasfanin.iuasampleappkotlin.callbacks
 
+import com.nicolasfanin.iuasampleappkotlin.networking.dataClasses.MuseumItem
+
 interface ActionListenerCallback {
 
-    fun onActionSuccess(successMessage: String)
+    fun onActionSuccess(successMessage: MuseumItem)
 
     fun onActionFailure(throwableError: Throwable)
 }
