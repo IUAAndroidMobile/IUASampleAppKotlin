@@ -3,19 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.nicolasfanin.iuasampleappkotlin">
 
+    <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
-    <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
-
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:hardwareAccelerated="true"
         android:theme="@style/AppTheme">
 
         <activity android:name=".activity.SplashActivity">
@@ -25,15 +25,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".activity.MyMainActivity" />
-
         <activity android:name=".activity.MyIntentActivity" />
-
         <activity android:name=".activity.ColorListActivity" />
-
         <activity android:name=".fragments.MyFragmentsActivity" />
-
+        <activity
+            android:name=".activity.ProductListActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
