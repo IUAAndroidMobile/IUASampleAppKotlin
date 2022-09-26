@@ -1,5 +1,6 @@
 package com.nicolasfanin.iuasampleappkotlin.recyclerView
 
+
 data class Product(
     val title: String,
     val description: String,

@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.nicolasfanin.iuasampleappkotlin.R
 
+
 class ProductListAdapter(val data: List<Product>) :RecyclerView.Adapter<ProductViewHolder>() {
 
     //Devuelve el view holder inflado.
