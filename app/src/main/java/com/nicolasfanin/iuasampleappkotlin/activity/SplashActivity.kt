@@ -46,6 +46,10 @@ class SplashActivity: AppCompatActivity() {
         binding.navigateToCalbacks.setOnClickListener {
             startActivity(Intent(this, CallbacksActivity::class.java))
         }
+
+        binding.navigateToProductList.setOnClickListener {
+            startActivity(Intent(this, ProductListActivity::class.java))
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
