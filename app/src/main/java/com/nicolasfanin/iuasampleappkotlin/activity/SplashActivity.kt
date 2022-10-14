@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -28,6 +29,7 @@ class SplashActivity: AppCompatActivity() {
             //Tu acción aca!
             val myIntent = Intent(this, MyIntentActivity::class.java)
             myIntent.putExtra(MY_INTENT_ACTIVITY_VALUE, "Nico")
+
             startActivityForResult(myIntent, REQUEST_CODE)
         }
 
@@ -50,6 +52,8 @@ class SplashActivity: AppCompatActivity() {
         binding.navigateToProductList.setOnClickListener {
             startActivity(Intent(this, ProductListActivity::class.java))
         }
+
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
