@@ -5,13 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.nicolasfanin.iuasampleappkotlin.R
+import com.nicolasfanin.iuasampleappkotlin.recyclerView.Product
 
+//Detalle del producto
 class MySecondFragment: Fragment() {
 
     private lateinit var mySecondButton: Button
+    private lateinit var titleProduct: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,6 +30,21 @@ class MySecondFragment: Fragment() {
             Navigation.findNavController(view).navigate(direction)
         }
 
+        titleProduct = view.findViewById(R.id.fragment_title)
+
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        arguments?.let { arg ->
+            val idProducto = arg.getString("id_producto")
+            Toast.makeText(context, idProducto, Toast.LENGTH_LONG).show()
+
+            val producto = arg.getParcelable<Product>("product_item")
+
+            titleProduct.text = producto?.title
+        }
     }
 }

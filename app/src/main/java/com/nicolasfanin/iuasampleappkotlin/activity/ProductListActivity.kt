@@ -45,5 +45,7 @@ class ProductListActivity : AppCompatActivity(), ProductListOnClickListener {
 
     override fun onItemClick(position: Int) {
         Toast.makeText(baseContext, "Su Producto seleccionado es: ${productList[position].title}", Toast.LENGTH_SHORT).show()
+
+
     }
 }
