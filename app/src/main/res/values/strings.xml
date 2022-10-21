@@ -36,5 +36,7 @@
     <string name="button_go_to_scan_qr">ESCANEAR QR</string>
     <string name="button_go_to_callbacks">CALLBACKS</string>
     <string name="button_go_to_product_list">LISTA PRODUCTOS (RECYCLER)</string>
+    <string name="button_go_to_navigation_drawer">NAVIGATION DRAWER</string>
+
 
 </resources>
