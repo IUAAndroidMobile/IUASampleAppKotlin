@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_product"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/myFirstFragment">
+
+    <fragment
+        android:id="@+id/myFirstFragment"
+        android:name="com.nicolasfanin.iuasampleappkotlin.fragments.MyFirstFragment"
+        android:label="MyFirstFragment"
+        tools:layout="@layout/fragment_my_first">
+        <action
+            android:id="@+id/action_myFirstFragment_to_mySecondFragment"
+            app:destination="@id/mySecondFragment"
+            app:popExitAnim="@anim/nav_default_enter_anim"
+            app:popUpTo="@id/navigation_product"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mySecondFragment"
+        android:name="com.nicolasfanin.iuasampleappkotlin.fragments.MySecondFragment"
+        android:label="MySecondFragment"
+        tools:layout="@layout/fragment_my_second">
+        <argument
+            android:name="product_item"
+            app:argType="com.nicolasfanin.iuasampleappkotlin.recyclerView.Product"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="arg2"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Sin Valor" />
+    </fragment>
+</navigation>

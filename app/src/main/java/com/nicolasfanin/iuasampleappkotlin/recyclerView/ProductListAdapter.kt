@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.nicolasfanin.iuasampleappkotlin.R
 
 class ProductListAdapter(private val data: List<Product>, private val listener: ProductListOnClickListener) : RecyclerView.Adapter<ProductListViewHolder>() {
@@ -19,6 +20,14 @@ class ProductListAdapter(private val data: List<Product>, private val listener: 
         val product = data[position]
         holder.productTitle.text = product.title
         holder.productDescription.text = product.description
+
+        Glide
+            .with(holder.itemView)
+            .load(product.imageURL)
+            .centerCrop()
+            .placeholder(R.drawable.circle)
+            .into(holder.productImage)
+
     }
 
     override fun getItemCount(): Int = data.size

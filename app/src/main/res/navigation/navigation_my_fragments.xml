@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_myFirstFragment_to_mySecondFragment"
             app:destination="@id/mySecondFragment" />
+        <action
+            android:id="@+id/action_myFirstFragment_to_myThirdFragment"
+            app:destination="@id/myThirdFragment" />
     </fragment>
     <fragment
         android:id="@+id/mySecondFragment"
@@ -22,11 +25,17 @@
         <action
             android:id="@+id/action_mySecondFragment_to_myThirdFragment"
             app:destination="@id/myThirdFragment" />
+        <action
+            android:id="@+id/action_mySecondFragment_to_myFirstFragment"
+            app:destination="@id/myFirstFragment" />
     </fragment>
     <fragment
         android:id="@+id/myThirdFragment"
         android:name="com.nicolasfanin.iuasampleappkotlin.fragments.MyThirdFragment"
         android:label="MyThirdFragment"
         tools:layout="@layout/fragment_my_third" >
+        <action
+            android:id="@+id/action_myThirdFragment_to_myFirstFragment"
+            app:destination="@id/myFirstFragment" />
     </fragment>
 </navigation>

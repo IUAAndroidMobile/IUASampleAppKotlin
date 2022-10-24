@@ -8,7 +8,9 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.nicolasfanin.iuasampleappkotlin.R
+import com.nicolasfanin.iuasampleappkotlin.recyclerView.Product
 
+//Listado de Productos
 class MyFirstFragment: Fragment() {
 
     private lateinit var myFirstFragmentButton : Button
@@ -28,6 +30,8 @@ class MyFirstFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         myFirstFragmentButton.setOnClickListener {
             val direction = MyFirstFragmentDirections.actionMyFirstFragmentToMySecondFragment()
+            direction.productItem = Product(title = "Producto 1", description = "Descripcion del producto 1", imageURL = "http://...", 500.0)
+            direction.arg2 = "123"
             Navigation.findNavController(view).navigate(direction)
         }
     }

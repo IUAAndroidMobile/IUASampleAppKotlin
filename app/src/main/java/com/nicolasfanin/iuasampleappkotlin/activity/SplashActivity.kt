@@ -53,6 +53,10 @@ class SplashActivity: AppCompatActivity() {
             startActivity(Intent(this, ProductListActivity::class.java))
         }
 
+        binding.navigateToNavigationDrawer.setOnClickListener {
+            startActivity(Intent(this, NavigationDrawerActivity::class.java))
+        }
+
 
     }
 
