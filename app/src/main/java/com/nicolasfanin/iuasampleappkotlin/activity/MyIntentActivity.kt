@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.nicolasfanin.iuasampleappkotlin.databinding.ActivityMyIntentBinding
 import com.nicolasfanin.iuasampleappkotlin.utils.MY_INTENT_ACTIVITY_VALUE
+import com.nicolasfanin.iuasampleappkotlin.utils.RESULTADO
 
 class MyIntentActivity: AppCompatActivity() {
 
@@ -21,9 +22,9 @@ class MyIntentActivity: AppCompatActivity() {
 
         binding.activityResultButton.setOnClickListener {
             val intent = Intent()
-            val resultado = "Este es el resultado!!!!"
-            //intent.setData(Uri.parse(resultado))
-            //intent.putExtra("RESULTADO", "BIEN")
+            val resultado = "http://www..,.."
+            intent.setData(Uri.parse(resultado))
+            intent.putExtra(RESULTADO, "BIEN")
             setResult(RESULT_OK)
             finish()
         }

@@ -45,7 +45,7 @@ class CallbacksActivity: AppCompatActivity() {
             }
 
             override fun onActionFailure(throwableError: Throwable) {
-                Log.i("FAILURE", throwableError.message)
+                throwableError.message?.let { Log.i("FAILURE", it) }
             }
         })
     }
