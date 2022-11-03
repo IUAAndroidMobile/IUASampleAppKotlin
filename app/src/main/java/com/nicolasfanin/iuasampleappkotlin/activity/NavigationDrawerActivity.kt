@@ -21,13 +21,6 @@ class NavigationDrawerActivity: AppCompatActivity() {
 
         setContentView(view)
 
-        /**val navController = findNavController()
-        val appBarConfiguration = AppBarConfiguration(navController.graph)
-
-        view.findViewById<Toolbar>(R.id.drawer_layout)
-            .setupWithNavController(navController, appBarConfiguration)
-
-        **/
 
 
     }
