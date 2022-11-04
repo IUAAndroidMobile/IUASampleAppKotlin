@@ -2,15 +2,19 @@ package com.nicolasfanin.iuasampleappkotlin.activity
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.net.Uri
 import android.os.Bundle
+import android.text.Editable
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.zxing.integration.android.IntentIntegrator
+import com.nicolasfanin.iuasampleappkotlin.MyApplication
 import com.nicolasfanin.iuasampleappkotlin.databinding.ActivitySplashBinding
 import com.nicolasfanin.iuasampleappkotlin.fragments.MyFragmentsActivity
+import com.nicolasfanin.iuasampleappkotlin.preferences.MySharedPreferences
 import com.nicolasfanin.iuasampleappkotlin.utils.MY_INTENT_ACTIVITY_VALUE
 
 class SplashActivity: AppCompatActivity() {
@@ -57,7 +61,19 @@ class SplashActivity: AppCompatActivity() {
             startActivity(Intent(this, NavigationDrawerActivity::class.java))
         }
 
+    }
 
+    override fun onResume() {
+        super.onResume()
+        if (MyApplication.preferences.getUserName().isNotEmpty() || MyApplication.preferences.getUserName().isNotBlank()) {
+            binding.userNameEditText.setText(MyApplication.preferences.getUserName())
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        MyApplication.preferences.setUserName(binding.userNameEditText.text.toString())
+        binding.userNameEditText.setText("")
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

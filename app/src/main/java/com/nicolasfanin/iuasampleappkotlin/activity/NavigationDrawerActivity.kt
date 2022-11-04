@@ -7,8 +7,10 @@ import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import com.nicolasfanin.iuasampleappkotlin.MyApplication
 import com.nicolasfanin.iuasampleappkotlin.R
 import com.nicolasfanin.iuasampleappkotlin.databinding.ActivityNavigationDrawerBinding
+import com.nicolasfanin.iuasampleappkotlin.preferences.MySharedPreferences
 
 class NavigationDrawerActivity: AppCompatActivity() {
 
