@@ -12,12 +12,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.zxing.integration.android.IntentIntegrator
 import com.nicolasfanin.iuasampleappkotlin.MyApplication
+import com.nicolasfanin.iuasampleappkotlin.database.model.ProductEntity
 import com.nicolasfanin.iuasampleappkotlin.databinding.ActivitySplashBinding
 import com.nicolasfanin.iuasampleappkotlin.fragments.MyFragmentsActivity
 import com.nicolasfanin.iuasampleappkotlin.preferences.MySharedPreferences
 import com.nicolasfanin.iuasampleappkotlin.utils.MY_INTENT_ACTIVITY_VALUE
 
-class SplashActivity: AppCompatActivity() {
+class SplashActivity : AppCompatActivity() {
 
     private val REQUEST_CODE = 100
 
@@ -61,11 +62,22 @@ class SplashActivity: AppCompatActivity() {
             startActivity(Intent(this, NavigationDrawerActivity::class.java))
         }
 
+        MyApplication.myAppDatabase.productDao().insertProduct(
+            ProductEntity(
+                title = "Producto 1 BD",
+                description = "Description 1 BD",
+                imageURL = "",
+                price = 50.0
+            )
+        )
+
     }
 
     override fun onResume() {
         super.onResume()
-        if (MyApplication.preferences.getUserName().isNotEmpty() || MyApplication.preferences.getUserName().isNotBlank()) {
+        if (MyApplication.preferences.getUserName()
+                .isNotEmpty() || MyApplication.preferences.getUserName().isNotBlank()
+        ) {
             binding.userNameEditText.setText(MyApplication.preferences.getUserName())
         }
     }
@@ -88,7 +100,8 @@ class SplashActivity: AppCompatActivity() {
             if (result.contents == null) {
                 Toast.makeText(this, "Sin resultado", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, "El valor escaneado es: ${result.contents}",Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "El valor escaneado es: ${result.contents}", Toast.LENGTH_LONG)
+                    .show()
 
             }
         } else {
@@ -109,9 +122,11 @@ class SplashActivity: AppCompatActivity() {
         startActivity(Intent(this, ColorListActivity::class.java))
     }
 
-    fun checkInternet() : Boolean {
-        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val capabilities = connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
+    fun checkInternet(): Boolean {
+        val connectivityManager =
+            getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val capabilities =
+            connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
         if (capabilities != null) {
             return when {
                 capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> {
