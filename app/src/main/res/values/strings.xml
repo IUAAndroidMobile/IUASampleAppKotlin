@@ -37,6 +37,8 @@
     <string name="button_go_to_callbacks">CALLBACKS</string>
     <string name="button_go_to_product_list">LISTA PRODUCTOS (RECYCLER)</string>
     <string name="button_go_to_navigation_drawer">NAVIGATION DRAWER</string>
+    <string name="button_go_to_navigation_database_inspect">BASE DE DATOS</string>
+
 
 
 </resources>
