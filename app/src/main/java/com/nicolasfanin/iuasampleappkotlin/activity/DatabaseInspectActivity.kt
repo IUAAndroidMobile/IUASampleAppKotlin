@@ -12,7 +12,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
-
 /**
  * https://kotlinlang.org/docs/coroutines-basics.html
  */
@@ -30,6 +29,7 @@ class DatabaseInspectActivity : AppCompatActivity() {
 
         // Region de Observers
         productListLiveData.observe(this, Observer { productList ->
+            //Ocultar el loader / progressBar
             findViewById<TextView>(R.id.database_information).text = productList.toString()
         })
 
@@ -44,7 +44,8 @@ class DatabaseInspectActivity : AppCompatActivity() {
     private fun getProductListForDatabase() {
         runBlocking {
             launch(Dispatchers.IO) {
-                productListLiveData.postValue(MyApplication.myAppDatabase.productDao().getAllProducts())
+                val list = MyApplication.myAppDatabase.productDao().getAllProducts()
+                productListLiveData.postValue(list)
             }
         }
     }

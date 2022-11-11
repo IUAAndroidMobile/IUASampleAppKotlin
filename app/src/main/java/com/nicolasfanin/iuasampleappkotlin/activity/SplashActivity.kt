@@ -17,6 +17,7 @@ import com.nicolasfanin.iuasampleappkotlin.databinding.ActivitySplashBinding
 import com.nicolasfanin.iuasampleappkotlin.fragments.MyFragmentsActivity
 import com.nicolasfanin.iuasampleappkotlin.preferences.MySharedPreferences
 import com.nicolasfanin.iuasampleappkotlin.utils.MY_INTENT_ACTIVITY_VALUE
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlin.coroutines.coroutineContext
@@ -75,7 +76,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun insertProducts() {
         runBlocking {
-            launch {
+            launch(Dispatchers.IO) {
                 MyApplication.myAppDatabase.productDao().insertProduct(
                     ProductEntity(
                         title = "Producto 1 BD",
