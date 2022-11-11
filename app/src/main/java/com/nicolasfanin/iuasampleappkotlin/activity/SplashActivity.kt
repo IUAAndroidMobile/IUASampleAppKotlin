@@ -17,6 +17,9 @@ import com.nicolasfanin.iuasampleappkotlin.databinding.ActivitySplashBinding
 import com.nicolasfanin.iuasampleappkotlin.fragments.MyFragmentsActivity
 import com.nicolasfanin.iuasampleappkotlin.preferences.MySharedPreferences
 import com.nicolasfanin.iuasampleappkotlin.utils.MY_INTENT_ACTIVITY_VALUE
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import kotlin.coroutines.coroutineContext
 
 class SplashActivity : AppCompatActivity() {
 
@@ -62,15 +65,43 @@ class SplashActivity : AppCompatActivity() {
             startActivity(Intent(this, NavigationDrawerActivity::class.java))
         }
 
-        MyApplication.myAppDatabase.productDao().insertProduct(
-            ProductEntity(
-                title = "Producto 1 BD",
-                description = "Description 1 BD",
-                imageURL = "",
-                price = 50.0
-            )
-        )
+        binding.navigateToDatabaseInspect.setOnClickListener{
+            startActivity((Intent(this, DatabaseInspectActivity::class.java)))
+        }
 
+        insertProducts()
+
+    }
+
+    private fun insertProducts() {
+        runBlocking {
+            launch {
+                MyApplication.myAppDatabase.productDao().insertProduct(
+                    ProductEntity(
+                        title = "Producto 1 BD",
+                        description = "Description 1 BD",
+                        imageURL = "",
+                        price = 50.0
+                    )
+                )
+                MyApplication.myAppDatabase.productDao().insertProduct(
+                    ProductEntity(
+                        title = "Producto 2 BD",
+                        description = "Description 2 BD",
+                        imageURL = "",
+                        price = 50.0
+                    )
+                )
+                MyApplication.myAppDatabase.productDao().insertProduct(
+                    ProductEntity(
+                        title = "Producto 3 BD",
+                        description = "Description 3 BD",
+                        imageURL = "",
+                        price = 50.0
+                    )
+                )
+            }
+        }
     }
 
     override fun onResume() {

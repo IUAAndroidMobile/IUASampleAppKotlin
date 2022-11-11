@@ -120,6 +120,19 @@
             app:layout_constraintTop_toBottomOf="@id/user_name_edit_text"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
+        <Button
+            android:id="@+id/navigate_to_database_inspect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="@dimen/button_margin"
+            android:layout_marginEnd="20dp"
+            android:text="@string/button_go_to_navigation_database_inspect"
+            android:textSize="@dimen/title_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/selectedProductTextView" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

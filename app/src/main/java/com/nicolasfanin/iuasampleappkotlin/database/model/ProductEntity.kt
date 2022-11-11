@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "Product")
 data class ProductEntity(
     @PrimaryKey(autoGenerate = true)
-    val id : Int? = Math.random().toInt(),
+    var id : Int? = null,
     @ColumnInfo(name = "product_title")
     val title : String,
     val description: String,

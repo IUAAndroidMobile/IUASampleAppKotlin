@@ -11,10 +11,10 @@ import androidx.room.Update
 interface ProductDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertProduct(productEntity: ProductEntity)
+    suspend fun insertProduct(productEntity: ProductEntity)
 
     @Query("SELECT * from Product")
-    fun getAllProducts(): List<ProductEntity>
+    suspend fun getAllProducts(): List<ProductEntity>
 
     @Query("SELECT * FROM Product WHERE id = :id")
     fun getProductById(id: Int): ProductEntity
