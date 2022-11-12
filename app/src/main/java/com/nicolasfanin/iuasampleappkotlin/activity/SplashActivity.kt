@@ -70,7 +70,11 @@ class SplashActivity : AppCompatActivity() {
             startActivity((Intent(this, DatabaseInspectActivity::class.java)))
         }
 
-        insertProducts()
+        binding.navigateToNetworkingActivity.setOnClickListener {
+            startActivity((Intent(this, NetworkingActivity::class.java)))
+        }
+
+        //insertProducts()
 
     }
 
