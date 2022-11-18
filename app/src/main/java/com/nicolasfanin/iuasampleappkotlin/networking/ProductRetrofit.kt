@@ -5,11 +5,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ProductRetrofit {
 
-    val retrofit = Retrofit.Builder()
+    private val retrofit = Retrofit.Builder()
         .baseUrl("https://mocki.io/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    val productService: ProductsServices = retrofit.create(ProductsServices::class.java)
+    val productRetrofitService: ProductsServices = retrofit.create(ProductsServices::class.java)
 
 }
