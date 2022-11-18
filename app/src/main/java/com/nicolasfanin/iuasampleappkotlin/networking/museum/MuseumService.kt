@@ -1,6 +1,6 @@
-package com.nicolasfanin.iuasampleappkotlin.networking
+package com.nicolasfanin.iuasampleappkotlin.networking.museum
 
-import com.nicolasfanin.iuasampleappkotlin.networking.dataClasses.MuseumItem
+import com.nicolasfanin.iuasampleappkotlin.networking.museum.dataClasses.MuseumItem
 import retrofit2.Call
 import retrofit2.http.GET
 

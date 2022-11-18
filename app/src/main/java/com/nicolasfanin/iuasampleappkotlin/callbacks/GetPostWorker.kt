@@ -1,8 +1,8 @@
 package com.nicolasfanin.iuasampleappkotlin.callbacks
 
 import android.content.Context
-import com.nicolasfanin.iuasampleappkotlin.networking.NetworkingImplementation
-import com.nicolasfanin.iuasampleappkotlin.networking.dataClasses.MuseumItem
+import com.nicolasfanin.iuasampleappkotlin.networking.museum.NetworkingImplementation
+import com.nicolasfanin.iuasampleappkotlin.networking.museum.dataClasses.MuseumItem
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

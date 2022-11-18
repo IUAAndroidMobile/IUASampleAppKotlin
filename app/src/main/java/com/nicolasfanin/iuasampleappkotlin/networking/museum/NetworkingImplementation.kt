@@ -1,4 +1,4 @@
-package com.nicolasfanin.iuasampleappkotlin.networking
+package com.nicolasfanin.iuasampleappkotlin.networking.museum
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

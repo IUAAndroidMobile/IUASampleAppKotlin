@@ -55,7 +55,8 @@ class SplashActivity : AppCompatActivity() {
         }
 
         binding.navigateToCalbacks.setOnClickListener {
-            startActivity(Intent(this, CallbacksActivity::class.java))
+            //startActivity(Intent(this, CallbacksActivity::class.java))
+            startActivity(Intent(this, MyMainActivity::class.java))
         }
 
         binding.navigateToProductList.setOnClickListener {
@@ -70,7 +71,11 @@ class SplashActivity : AppCompatActivity() {
             startActivity((Intent(this, DatabaseInspectActivity::class.java)))
         }
 
-        insertProducts()
+        binding.navigateToNetworkingActivity.setOnClickListener {
+            startActivity((Intent(this, NetworkingActivity::class.java)))
+        }
+
+        //insertProducts()
 
     }
 

@@ -1,4 +1,4 @@
-package com.nicolasfanin.iuasampleappkotlin.networking.dataClasses
+package com.nicolasfanin.iuasampleappkotlin.networking.museum.dataClasses
 
 import com.google.gson.annotations.SerializedName
 

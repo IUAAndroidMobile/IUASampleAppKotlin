@@ -1,6 +1,6 @@
 package com.nicolasfanin.iuasampleappkotlin.callbacks
 
-import com.nicolasfanin.iuasampleappkotlin.networking.dataClasses.MuseumItem
+import com.nicolasfanin.iuasampleappkotlin.networking.museum.dataClasses.MuseumItem
 
 interface ActionListenerCallback {
 

@@ -8,7 +8,7 @@ import androidx.core.view.isVisible
 import com.nicolasfanin.iuasampleappkotlin.callbacks.ActionListenerCallback
 import com.nicolasfanin.iuasampleappkotlin.callbacks.GetPostWorker
 import com.nicolasfanin.iuasampleappkotlin.databinding.ActivityCallbacksBinding
-import com.nicolasfanin.iuasampleappkotlin.networking.dataClasses.MuseumItem
+import com.nicolasfanin.iuasampleappkotlin.networking.museum.dataClasses.MuseumItem
 
 class CallbacksActivity: AppCompatActivity() {
 
